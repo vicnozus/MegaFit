@@ -1,0 +1,23 @@
+body{
+background-color: black;
+color: #00aaff;
+text-align: center;
+font-family: 'poppins' , sans-serif;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff;
+    font-size: 42px;
+    text-shadow: 0 0 10px #00aaff;
+    letter-spacing: 2px;
+}
+
+.slogan {
+    font-family: 'Poppins', sans-serif;
+    color: #cccccc;
+    font-size: 18px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}

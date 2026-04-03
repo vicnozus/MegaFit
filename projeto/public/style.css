@@ -1,34 +1,49 @@
-body{
-background-color: black;
-color: #00aaff;
-text-align: center;
-font-family: 'poppins' , sans-serif;
+/* ===== CONFIGURAÇÃO GERAL DO SITE ===== */
+body {
+    background-color: black; /* Cor de fundo preta */
+    color: #00aaff; /* Cor padrão dos textos (azul neon) */
+    text-align: center; /* Centraliza textos horizontalmente */
+    font-family: 'Poppins', sans-serif; /* Fonte principal do site */
+    padding-top: 80px; /* Espaço no topo pra não ficar escondido atrás do menu fixo */
 }
 
+
+/* ===== BARRA SUPERIOR (HEADER) ===== */
 .bloco {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+    position: fixed; /* Faz a barra ficar fixa na tela */
+    top: 0; /* Cola no topo */
+    left: 0; /* Cola na esquerda */
+    width: 100%; /* Ocupa toda a largura da tela */
+
+    display: flex; /* Ativa o Flexbox (organização em linha) */
+    justify-content: space-between; /* Joga itens pras extremidades */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+
+    padding: 15px 30px; /* Espaçamento interno (cima/baixo = 15px, lados = 30px) */
+
+    background: rgba(255, 255, 255, 0.05); /* Fundo branco bem transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro (desfoque do fundo atrás) */
+
+    border-bottom: 1px solid rgba(0, 170, 255, 0.2); /* Linha fina azul embaixo */
 }
 
+
+/* ===== TÍTULO PRINCIPAL ===== */
 h1 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00aaff;
-    font-size: 42px;
-    text-shadow: 0 0 10px #00aaff;
-    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+    color: #00aaff; /* Azul neon */
+    font-size: 42px; /* Tamanho grande */
+    text-shadow: 0 0 10px #00aaff; /* Brilho ao redor do texto */
+    letter-spacing: 2px; /* Espaço entre as letras */
 }
 
+
+/* ===== SLOGAN (TEXTO ABAIXO DO TÍTULO) ===== */
 .slogan {
-    font-family: 'Poppins', sans-serif;
-    color: #cccccc;
-    font-size: 18px;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Fonte mais simples */
+    color: #cccccc; /* Cinza claro */
+    font-size: 18px; /* Tamanho médio */
+    margin-top: 10px; /* Espaço acima do texto */
+    letter-spacing: 1px; /* Espaçamento leve entre letras */
+    text-align: center; /* Centraliza o texto */
 }
-

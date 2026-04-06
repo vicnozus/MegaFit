@@ -1,0 +1,27 @@
+{
+  "name": "megafit",
+  "version": "1.2.0",
+  "description": "sistema inteligente de treino",
+  "scripts": {
+    "start": "node projeto/server.js",
+    "dev": "nodemon projeto/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicnozus/MegaFit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vicnozus/MegaFit/issues"
+  },
+  "homepage": "https://github.com/vicnozus/MegaFit#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,68 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo da página */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000, #0a1a2f);
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caixa de login */
+.login-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Título */
+.login-box h2 {
+  color: #00aaff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+/* Inputs */
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Botão */
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: #00aaff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover (efeito) */
+.login-box button:hover {
+  background: #0088cc;
+}

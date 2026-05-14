@@ -1,3 +1,13 @@
+/* ===== RESET ===== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+
 body{
     background: radial-gradient(circle at top, #0f172a, #000);
     color: white;
@@ -5,20 +15,93 @@ body{
     font-family: 'Poppins', sans-serif;
 
     overflow-x: hidden;
-
-     overflow-x: hidden;
 }
 
-/* HERO */
+/* ===== HEADER ===== */
+
+.bloco{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background: rgba(0,0,0,0.4);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    z-index: 1000;
+}
+
+/* ===== LOGO ===== */
+
+.logo{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.Mega{
+    color: white;
+}
+
+.Fit{
+    color: #00aaff;
+}
+
+/* ===== BOTÕES HEADER ===== */
+
+.nav-buttons{
+    display: flex;
+    gap: 15px;
+}
+
+.nav-buttons button{
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+}
+
+.nav-buttons button:hover{
+    border-color: #00aaff;
+
+    color: #00aaff;
+
+    box-shadow: 0 0 15px rgba(0,170,255,0.4);
+
+    transform: translateY(-2px);
+}
+
+/* ===== HERO ===== */
 
 .hero{
-    min-height: 85vh;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 40px 20px;
+    padding: 120px 20px 40px;
 }
 
 .hero-content{
@@ -66,6 +149,8 @@ body{
     flex-wrap: wrap;
 }
 
+/* ===== BOTÕES ===== */
+
 .btn-primary{
     background: #00aaff;
 
@@ -112,66 +197,80 @@ body{
     color: black;
 }
 
-.nav-buttons{
+/* ===== CARDS ===== */
+
+.cards-container{
     display: flex;
-    gap: 15px;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    padding: 60px 20px;
 }
 
-.nav-buttons button{
-    background: transparent;
+.card{
+    background: rgba(255,255,255,0.05);
 
-    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
 
-    border: 1px solid rgba(255,255,255,0.2);
+    width: 320px;
 
-    padding: 10px 20px;
+    border-radius: 20px;
 
-    border-radius: 10px;
+    overflow: hidden;
 
-    cursor: pointer;
+    backdrop-filter: blur(10px);
 
     transition: 0.3s;
-
-    font-size: 14px;
 }
 
-.nav-buttons button:hover{
-    border-color: #00aaff;
+.card:hover{
+    transform: translateY(-8px);
 
-    color: #00aaff;
-
-    box-shadow: 0 0 15px rgba(0,170,255,0.4);
-
-    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0,170,255,0.3);
 }
 
-.bloco{
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
+.card img{
     width: 100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 220px;
 
-    padding: 20px 40px;
-
-    background: rgba(0,0,0,0.4);
-
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-
-    z-index: 1000;
-
-    box-sizing: border-box;
+    object-fit: cover;
 }
 
-header{
+.card-content{
+    padding: 20px;
+}
 
-    padding: 20px 25px;
+.card-content h2{
+    margin-bottom: 10px;
+}
+
+.card button{
+    margin: 0 20px 20px;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width: 768px){
+
+    .hero h1{
+        font-size: 2.5rem;
+    }
+
+    .hero p{
+        font-size: 1rem;
+    }
+
+    .bloco{
+        padding: 15px 20px;
+    }
+
+    .logo{
+        font-size: 1.4rem;
+    }
 
 }

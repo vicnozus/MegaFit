@@ -1,23 +1,149 @@
-/* ===== CONFIGURAÇÃO GERAL ===== */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body{
-    background-color: black;
-    color: #00aaff;
-    text-align: center;
+    background: radial-gradient(circle at top, #0f172a, #000);
+    color: white;
 
     font-family: 'Poppins', sans-serif;
 
-    padding-top: 120px;
+    overflow-x: hidden;
+
+     overflow-x: hidden;
 }
 
+/* HERO */
 
-/* ===== HEADER ===== */
+.hero{
+    min-height: 85vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.hero-content{
+    max-width: 750px;
+
+    text-align: center;
+}
+
+.mini-title{
+    color: #00aaff;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.hero h1{
+    font-size: 4rem;
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    line-height: 1.1;
+}
+
+.hero p{
+    color: #bdbdbd;
+
+    font-size: 1.2rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.btn-primary{
+    background: #00aaff;
+
+    color: black;
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 20px #00aaff;
+}
+
+.btn-secondary{
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #00aaff;
+
+    padding: 14px 28px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-secondary:hover{
+    background: #00aaff;
+
+    color: black;
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 15px;
+}
+
+.nav-buttons button{
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+}
+
+.nav-buttons button:hover{
+    border-color: #00aaff;
+
+    color: #00aaff;
+
+    box-shadow: 0 0 15px rgba(0,170,255,0.4);
+
+    transform: translateY(-2px);
+}
 
 .bloco{
     position: fixed;
@@ -31,221 +157,21 @@ body{
     justify-content: space-between;
     align-items: center;
 
-    padding: 15px 30px;
+    padding: 20px 40px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0,0,0,0.4);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 
     z-index: 1000;
+
+    box-sizing: border-box;
 }
 
+header{
 
-/* ===== LOGO ===== */
-
-.logo{
-    display: flex;
-    gap: 5px;
-
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.Mega{
-    color: white;
-}
-
-.Fit{
-    color: #00aaff;
-
-    text-shadow: 0 0 10px #00aaff;
-}
-
-
-/* ===== BOTÕES ===== */
-
-.nav-buttons{
-    display: flex;
-    gap: 15px;
-}
-
-.nav-buttons button{
-    padding: 10px 20px;
-
-    border: none;
-    border-radius: 8px;
-
-    background-color: #111;
-
-    color: white;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-size: 15px;
-}
-
-.nav-buttons button:hover{
-    background-color: #00aaff;
-
-    color: black;
-
-    transform: scale(1.05);
-
-    box-shadow: 0 0 15px #00aaff;
-}
-
-
-/* ===== CONTEÚDO ===== */
-
-.conteudo{
-    margin-top: 20px;
-}
-
-
-/* ===== TÍTULO ===== */
-
-h1{
-    font-family: 'Orbitron', sans-serif;
-
-    color: #00aaff;
-
-    font-size: 55px;
-
-    text-shadow: 0 0 10px #00aaff;
-
-    letter-spacing: 2px;
-}
-
-
-/* ===== SLOGAN ===== */
-
-.slogan{
-    font-family: 'Poppins', sans-serif;
-
-    color: #cccccc;
-
-    font-size: 18px;
-
-    margin-top: 10px;
-
-    letter-spacing: 1px;
-
-    text-align: center;
-}
-
-
-/* ===== CARDS ===== */
-
-.cards-container{
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 60px;
-
-    margin-top: 80px;
-
-    flex-wrap: wrap;
-}
-
-
-/* ===== CARD ===== */
-
-.card{
-    width: 320px;
-    height: 420px;
-
-    background-color: #111;
-
-    border: 2px solid #00aaff;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    transition: 0.4s;
-
-    box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
-}
-
-.card:hover{
-    transform: translateY(-10px);
-
-    box-shadow: 0 0 25px #00aaff;
-}
-
-
-/* ===== IMAGEM ===== */
-
-.card img{
-    width: 100%;
-    height: 300px;
-
-    object-fit: cover;
-}
-
-
-/* ===== CONTEÚDO DO CARD ===== */
-
-.card-content{
-    padding: 20px;
-}
-
-.card-content h2{
-    color: #00aaff;
-
-    margin-bottom: 15px;
-}
-
-
-/* ===== BOTÃO DO CARD ===== */
-
-.card-content button{
-    padding: 10px 20px;
-
-    border: none;
-    border-radius: 8px;
-
-    background-color: #00aaff;
-
-    color: black;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.card-content button:hover{
-    background-color: white;
-
-    transform: scale(1.05);
-}
-
-
-/* ===== RESPONSIVIDADE ===== */
-
-@media(max-width: 768px){
-
-    .bloco{
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    h1{
-        font-size: 40px;
-    }
-
-    .cards-container{
-        flex-direction: column;
-    }
+    padding: 20px 25px;
 
 }

@@ -1,22 +1,29 @@
 const express = require("express");
 const path = require("path");
+
 const app = express();
 const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
+// Página inicial
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// 3. Rota para a página de cadastro (se o botão de cadastro apontar para /cadastro)
+// Página cadastro
 app.get('/cadastro', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cadastro.html'));
 });
 
-// Rota para a página de login
+// Página login
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+// Página chat
+app.get('/chat', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'chat.html'));
 });
 
 app.listen(PORT, () => {

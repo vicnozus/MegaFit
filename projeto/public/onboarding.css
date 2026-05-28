@@ -14,6 +14,8 @@ body{
     color:white;
 }
 
+/* SECTION */
+
 .onboarding{
     min-height:100vh;
 
@@ -21,77 +23,122 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:50px 20px;
+    padding:40px 20px;
 }
+
+/* CONTAINER */
 
 .container{
     width:100%;
-    max-width:900px;
+    max-width:700px;
 
     text-align:center;
-}
 
-.subtitle{
-    color:#2dd4bf;
-    letter-spacing:3px;
-    margin-bottom:15px;
-}
-
-h1{
-    font-size:55px;
-    margin-bottom:15px;
-}
-
-.description{
-    color:#b8b8b8;
-    margin-bottom:50px;
-}
-
-.box{
     background:rgba(255,255,255,0.03);
 
     border:1px solid rgba(255,255,255,0.08);
 
-    border-radius:25px;
+    border-radius:30px;
 
-    padding:35px;
-    margin-bottom:25px;
+    padding:40px;
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 0 35px rgba(45,212,191,0.12);
+}
+
+/* TEXTOS */
+
+.subtitle{
+    color:#2dd4bf;
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    font-size:14px;
+}
+
+h1{
+    font-size:45px;
+    margin-bottom:35px;
 }
 
 h2{
-    margin-bottom:25px;
+    margin-bottom:30px;
+    font-size:30px;
 }
 
-/* NOVO - subtítulos da rotina */
-h3{
-    margin-bottom:15px;
-    color:#d1d5db;
-    font-size:18px;
+/* BARRA DE PROGRESSO */
+
+.progress-container{
+    width:100%;
+    height:10px;
+
+    background:#1f2937;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin-bottom:40px;
 }
 
-/* NOVO - espaço entre grupos */
-.routine-group{
-    margin-bottom:35px;
+.progress-bar{
+    height:100%;
+    width:12%;
+
+    background:#2dd4bf;
+
+    transition:0.4s ease;
+
+    border-radius:999px;
 }
+
+/* PASSOS */
+
+.step{
+    display:none;
+
+    animation:fade .4s ease;
+}
+
+.step.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* BOTÕES DAS OPÇÕES */
 
 .options{
     display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:15px;
 }
 
 .option-btn{
     background:transparent;
+
     color:white;
 
     border:2px solid #2dd4bf;
 
-    padding:14px 22px;
+    padding:16px 24px;
 
-    border-radius:16px;
+    border-radius:18px;
 
     cursor:pointer;
 
@@ -102,23 +149,31 @@ h3{
 
 .option-btn:hover{
     transform:translateY(-3px);
+
     background:#2dd4bf;
+
     color:black;
 }
 
-/* BOTÃO SELECIONADO */
+/* SELECIONADO */
+
 .option-btn.selected{
     background:#2dd4bf;
+
     color:black;
+
     transform:scale(1.05);
 
-    box-shadow:0 0 20px rgba(45,212,191,0.4);
+    box-shadow:0 0 20px rgba(45,212,191,0.45);
 }
+
+/* INPUTS */
 
 .inputs{
     display:flex;
     flex-direction:column;
-    gap:15px;
+
+    gap:18px;
 }
 
 input{
@@ -128,7 +183,7 @@ input{
 
     border:none;
 
-    border-radius:16px;
+    border-radius:18px;
 
     background:#111827;
 
@@ -139,19 +194,34 @@ input{
 
 input:focus{
     outline:none;
+
     border:2px solid #2dd4bf;
 }
 
-#finishBtn{
-    background:#2dd4bf;
+/* BOTÕES DE NAVEGAÇÃO */
+
+.buttons{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:40px;
+}
+
+#prevBtn,
+#nextBtn{
+    flex:1;
 
     border:none;
 
-    padding:18px 50px;
-
     border-radius:18px;
 
-    font-size:18px;
+    padding:18px;
+
+    font-size:16px;
+
     font-weight:600;
 
     cursor:pointer;
@@ -159,25 +229,46 @@ input:focus{
     transition:0.3s;
 }
 
-#finishBtn:hover{
-    transform:scale(1.05);
-
-    box-shadow:0 0 25px rgba(45,212,191,0.45);
+#prevBtn{
+    background:#1f2937;
+    color:white;
 }
+
+#nextBtn{
+    background:#2dd4bf;
+    color:black;
+}
+
+#prevBtn:hover,
+#nextBtn:hover{
+    transform:translateY(-2px);
+}
+
+#nextBtn:hover{
+    box-shadow:0 0 25px rgba(45,212,191,0.4);
+}
+
+/* RESPONSIVO */
 
 @media(max-width:768px){
 
-    h1{
-        font-size:38px;
+    .container{
+        padding:30px 22px;
     }
 
-    .box{
-        padding:25px;
+    h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:24px;
     }
 
     .option-btn{
         width:100%;
     }
 
+    .buttons{
+        flex-direction:column;
+    }
 }
-

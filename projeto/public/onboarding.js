@@ -1,193 +1,210 @@
+// =========================
+// ELEMENTOS
+// =========================
 
-// ===========================
-// OBJETIVOS
-// ===========================
+const steps =
+document.querySelectorAll(".step");
 
-const objetivosBtns =
-document.querySelectorAll(
-    ".option-btn:not(.rotina-btn):not(.horario-btn):not(.treino-btn):not(.estudos-btn):not(.sono-btn)"
-);
+const nextBtn =
+document.getElementById("nextBtn");
 
-let objetivos = [];
+const prevBtn =
+document.getElementById("prevBtn");
 
-objetivosBtns.forEach(button => {
+const progressBar =
+document.getElementById("progressBar");
 
-    button.addEventListener("click", () => {
-
-        const valor =
-        button.innerText.trim();
-
-        button.classList.toggle("selected");
-
-        if(objetivos.includes(valor)){
-
-            objetivos =
-            objetivos.filter(
-                item => item !== valor
-            );
-
-        } else {
-
-            objetivos.push(valor);
-        }
-
-        console.log("Objetivos:", objetivos);
-    });
-
-});
+let currentStep = 0;
 
 
-// ===========================
-// ROTINA
-// ===========================
+// =========================
+// DADOS DO ONBOARDING
+// =========================
 
-const rotinaUsuario = {
+const onboardingData = {
+    objetivo: "",
     rotina: "",
-    horarios: "",
+    horario: "",
     treino: "",
     estudos: "",
-    sono: ""
+    tempoLivre: "",
+    sono: "",
+    idade: "",
+    peso: "",
+    altura: ""
 };
 
 
-// função reutilizável
-function selecionarOpcao(
-    classe,
-    chave
-){
+// =========================
+// MOSTRAR TELA
+// =========================
 
-    const botoes =
-    document.querySelectorAll(
-        `.${classe}`
+function showStep(index){
+
+    steps.forEach(step => {
+        step.classList.remove("active");
+    });
+
+    steps[index].classList.add(
+        "active"
     );
 
-    botoes.forEach(botao => {
+    // esconder botão voltar
+    prevBtn.style.display =
+        index === 0
+        ? "none"
+        : "block";
 
-        botao.addEventListener(
+    // mudar texto do botão
+    nextBtn.innerText =
+        index === steps.length - 1
+        ? "Finalizar"
+        : "Próximo";
+
+    // barra progresso
+    const progress =
+    ((index + 1)
+    / steps.length) * 100;
+
+    progressBar.style.width =
+        `${progress}%`;
+}
+
+
+// =========================
+// PEGAR OPÇÕES
+// =========================
+
+const perguntas = [
+    "objetivo",
+    "rotina",
+    "horario",
+    "treino",
+    "estudos",
+    "tempoLivre",
+    "sono"
+];
+
+steps.forEach((step, index) => {
+
+    const buttons =
+    step.querySelectorAll(
+        ".option-btn"
+    );
+
+    buttons.forEach(button => {
+
+        button.addEventListener(
             "click",
             () => {
 
                 // remove seleção anterior
-                botoes.forEach(btn => {
+                buttons.forEach(btn => {
                     btn.classList.remove(
                         "selected"
                     );
                 });
 
-                // adiciona seleção
-                botao.classList.add(
+                button.classList.add(
                     "selected"
                 );
 
-                // salva valor
-                rotinaUsuario[chave] =
-                botao.getAttribute(
-                    "data-value"
-                );
+                if(index < perguntas.length){
+
+                    onboardingData[
+                        perguntas[index]
+                    ] =
+                    button.innerText.trim();
+                }
 
                 console.log(
-                    rotinaUsuario
+                    onboardingData
                 );
             }
         );
     });
-}
+});
 
 
-// aplicar função
-selecionarOpcao(
-    "rotina-btn",
-    "rotina"
-);
+// =========================
+// PRÓXIMO
+// =========================
 
-selecionarOpcao(
-    "horario-btn",
-    "horarios"
-);
-
-selecionarOpcao(
-    "treino-btn",
-    "treino"
-);
-
-selecionarOpcao(
-    "estudos-btn",
-    "estudos"
-);
-
-selecionarOpcao(
-    "sono-btn",
-    "sono"
-);
-
-
-// ===========================
-// FINALIZAR
-// ===========================
-
-document
-.getElementById(
-    "finishBtn"
-)
-.addEventListener(
+nextBtn.addEventListener(
     "click",
     () => {
 
-        const onboardingData = {
+        // última tela = finalizar
+        if(
+            currentStep ===
+            steps.length - 1
+        ){
 
-            objetivos,
-
-            rotina:
-            rotinaUsuario.rotina,
-
-            horarios:
-            rotinaUsuario.horarios,
-
-            treino:
-            rotinaUsuario.treino,
-
-            estudos:
-            rotinaUsuario.estudos,
-
-            sono:
-            rotinaUsuario.sono,
-
-            idade:
-            document
-            .getElementById(
+            onboardingData.idade =
+            document.getElementById(
                 "idade"
-            ).value,
+            ).value;
 
-            peso:
-            document
-            .getElementById(
+            onboardingData.peso =
+            document.getElementById(
                 "peso"
-            ).value,
+            ).value;
 
-            altura:
-            document
-            .getElementById(
+            onboardingData.altura =
+            document.getElementById(
                 "altura"
-            ).value
-        };
+            ).value;
 
-        console.log(
-            onboardingData
-        );
-
-        localStorage.setItem(
-            "onboarding",
-            JSON.stringify(
+            console.log(
                 onboardingData
-            )
-        );
+            );
 
-        alert(
-            "Plano salvo com sucesso 💪"
-        );
+            localStorage.setItem(
+                "onboarding",
+                JSON.stringify(
+                    onboardingData
+                )
+            );
 
-        window.location.href =
-        "/dashboard";
+            alert(
+                "Plano salvo com sucesso 💪"
+            );
+
+            window.location.href =
+                "/dashboard";
+
+            return;
+        }
+
+        currentStep++;
+
+        showStep(currentStep);
     }
 );
 
+
+// =========================
+// VOLTAR
+// =========================
+
+prevBtn.addEventListener(
+    "click",
+    () => {
+
+        if(currentStep > 0){
+
+            currentStep--;
+
+            showStep(
+                currentStep
+            );
+        }
+    }
+);
+
+
+// =========================
+// INICIAR
+// =========================
+
+showStep(currentStep);

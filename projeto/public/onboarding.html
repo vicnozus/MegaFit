@@ -12,7 +12,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <section class="onboarding">
@@ -23,213 +22,107 @@
                 SUA ROTINA INTELIGENTE
             </p>
 
-            <h1>
-                Monte seu plano de evolução
-            </h1>
+            <h1>Monte seu plano de evolução</h1>
 
-            <p class="description">
-                Escolha seus objetivos e monte uma rotina personalizada.
-            </p>
+            <!-- BARRA DE PROGRESSO -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
 
-            <!-- OBJETIVOS -->
+            <!-- TELAS -->
 
-            <div class="box">
+            <div class="step active">
 
                 <h2>Qual é seu objetivo?</h2>
 
                 <div class="options">
-
-                    <button class="option-btn">
-                        Ganhar massa
-                    </button>
-
-                    <button class="option-btn">
-                        Melhorar rotina
-                    </button>
-
-                    <button class="option-btn">
-                        Produtividade
-                    </button>
-
-                    <button class="option-btn">
-                        Emagrecer
-                    </button>
-
-                    <button class="option-btn">
-                        Hábitos saudáveis
-                    </button>
-
+                    <button class="option-btn">Ganhar massa</button>
+                    <button class="option-btn">Melhorar rotina</button>
+                    <button class="option-btn">Produtividade</button>
+                    <button class="option-btn">Emagrecer</button>
+                    <button class="option-btn">Hábitos saudáveis</button>
                 </div>
 
             </div>
 
-            <!-- ROTINA -->
-
-            <div class="box">
+            <div class="step">
 
                 <h2>Como é sua rotina?</h2>
 
-                <!-- ROTINA GERAL -->
-
-                <div class="routine-group">
-
-                    <h3>Rotina</h3>
-
-                    <div class="options">
-
-                        <button class="option-btn rotina-btn" data-value="Trabalho">
-                            Trabalho
-                        </button>
-
-                        <button class="option-btn rotina-btn" data-value="Escola">
-                            Escola
-                        </button>
-
-                        <button class="option-btn rotina-btn" data-value="Faculdade">
-                            Faculdade
-                        </button>
-
-                        <button class="option-btn rotina-btn" data-value="Casa">
-                            Casa
-                        </button>
-
-                    </div>
-
+                <div class="options">
+                    <button class="option-btn">Trabalho</button>
+                    <button class="option-btn">Escola</button>
+                    <button class="option-btn">Faculdade</button>
+                    <button class="option-btn">Casa</button>
                 </div>
 
-                <!-- HORÁRIOS -->
+            </div>
 
-                <div class="routine-group">
+            <div class="step">
 
-                    <h3>Horários disponíveis</h3>
+                <h2>Qual horário disponível?</h2>
 
-                    <div class="options">
-
-                        <button class="option-btn horario-btn" data-value="Manhã">
-                            Manhã
-                        </button>
-
-                        <button class="option-btn horario-btn" data-value="Tarde">
-                            Tarde
-                        </button>
-
-                        <button class="option-btn horario-btn" data-value="Noite">
-                            Noite
-                        </button>
-
-                    </div>
-
+                <div class="options">
+                    <button class="option-btn">Manhã</button>
+                    <button class="option-btn">Tarde</button>
+                    <button class="option-btn">Noite</button>
                 </div>
 
-                <!-- TREINO -->
+            </div>
 
-                <div class="routine-group">
+            <div class="step">
 
-                    <h3>Treino</h3>
+                <h2>Você treina?</h2>
 
-                    <div class="options">
-
-                        <button class="option-btn treino-btn" data-value="Academia">
-                            Academia
-                        </button>
-
-                        <button class="option-btn treino-btn" data-value="Corrida">
-                            Corrida
-                        </button>
-
-                        <button class="option-btn treino-btn" data-value="Treino em casa">
-                            Treino em casa
-                        </button>
-
-                        <button class="option-btn treino-btn" data-value="Nenhum">
-                            Nenhum
-                        </button>
-
-                    </div>
-
+                <div class="options">
+                    <button class="option-btn">Academia</button>
+                    <button class="option-btn">Corrida</button>
+                    <button class="option-btn">Treino em casa</button>
+                    <button class="option-btn">Nenhum</button>
                 </div>
 
-                <!-- ESTUDOS -->
+            </div>
 
-                <div class="routine-group">
+            <div class="step">
 
-                    <h3>Tempo de estudos por dia</h3>
+                <h2>Tempo de estudos por dia</h2>
 
-                    <div class="options">
-
-                        <button class="option-btn estudos-btn" data-value="1h">
-                            1h
-                        </button>
-
-                        <button class="option-btn estudos-btn" data-value="2h">
-                            2h
-                        </button>
-
-                        <button class="option-btn estudos-btn" data-value="4h+">
-                            4h+
-                        </button>
-
-                    </div>
-
+                <div class="options">
+                    <button class="option-btn">1h</button>
+                    <button class="option-btn">2h</button>
+                    <button class="option-btn">4h+</button>
                 </div>
 
-                <!-- TEMPO LIVRE -->
+            </div>
 
-                <div class="routine-group">
+            <div class="step">
 
-                    <h3>Quanto tempo livre você tem por dia?</h3>
+                <h2>Quanto tempo livre você tem?</h2>
 
-                    <div class="options">
-
-                        <button class="option-btn tempo-btn" data-value="30 min">
-                            30 min
-                        </button>
-
-                        <button class="option-btn tempo-btn" data-value="1h">
-                            1h
-                        </button>
-
-                        <button class="option-btn tempo-btn" data-value="2h">
-                            2h
-                        </button>
-
-                        <button class="option-btn tempo-btn" data-value="4h+">
-                            4h+
-                        </button>
-
-                    </div>
-
+                <div class="options">
+                    <button class="option-btn">30 min</button>
+                    <button class="option-btn">1h</button>
+                    <button class="option-btn">2h</button>
+                    <button class="option-btn">4h+</button>
                 </div>
 
-                <!-- SONO -->
+            </div>
 
-                <div class="routine-group">
+            <div class="step">
 
-                    <h3>Horas de sono</h3>
+                <h2>Horas de sono</h2>
 
-                    <div class="options">
-
-                        <button class="option-btn sono-btn" data-value="5h">
-                            5h
-                        </button>
-
-                        <button class="option-btn sono-btn" data-value="7h">
-                            7h
-                        </button>
-
-                        <button class="option-btn sono-btn" data-value="8h+">
-                            8h+
-                        </button>
-
-                    </div>
-
+                <div class="options">
+                    <button class="option-btn">5h</button>
+                    <button class="option-btn">7h</button>
+                    <button class="option-btn">8h+</button>
                 </div>
 
             </div>
 
             <!-- DADOS -->
 
-            <div class="box">
+            <div class="step">
 
                 <h2>Seus dados</h2>
 
@@ -237,29 +130,39 @@
 
                     <input
                         type="number"
-                        id="idade"
                         placeholder="Idade"
+                        id="idade"
                     >
 
                     <input
                         type="number"
-                        id="peso"
                         placeholder="Peso (kg)"
+                        id="peso"
                     >
 
                     <input
                         type="number"
-                        id="altura"
                         placeholder="Altura (cm)"
+                        id="altura"
                     >
 
                 </div>
 
             </div>
 
-            <button id="finishBtn">
-                Finalizar
-            </button>
+            <!-- BOTÕES -->
+
+            <div class="buttons">
+
+                <button id="prevBtn">
+                    Voltar
+                </button>
+
+                <button id="nextBtn">
+                    Próximo
+                </button>
+
+            </div>
 
         </div>
 
@@ -269,4 +172,3 @@
 
 </body>
 </html>
-

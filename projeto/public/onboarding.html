@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="onboarding.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -68,17 +69,159 @@
 
                 <h2>Como é sua rotina?</h2>
 
-                <div class="inputs">
+                <!-- ROTINA GERAL -->
 
-                    <input type="text" id="rotina" placeholder="Sua rotina">
+                <div class="routine-group">
 
-                    <input type="text" id="horarios" placeholder="Horários disponíveis">
+                    <h3>Rotina</h3>
 
-                    <input type="text" id="treino" placeholder="Treino">
+                    <div class="options">
 
-                    <input type="text" id="estudos" placeholder="Estudos">
+                        <button class="option-btn rotina-btn" data-value="Trabalho">
+                            Trabalho
+                        </button>
 
-                    <input type="text" id="sono" placeholder="Sono">
+                        <button class="option-btn rotina-btn" data-value="Escola">
+                            Escola
+                        </button>
+
+                        <button class="option-btn rotina-btn" data-value="Faculdade">
+                            Faculdade
+                        </button>
+
+                        <button class="option-btn rotina-btn" data-value="Casa">
+                            Casa
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- HORÁRIOS -->
+
+                <div class="routine-group">
+
+                    <h3>Horários disponíveis</h3>
+
+                    <div class="options">
+
+                        <button class="option-btn horario-btn" data-value="Manhã">
+                            Manhã
+                        </button>
+
+                        <button class="option-btn horario-btn" data-value="Tarde">
+                            Tarde
+                        </button>
+
+                        <button class="option-btn horario-btn" data-value="Noite">
+                            Noite
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- TREINO -->
+
+                <div class="routine-group">
+
+                    <h3>Treino</h3>
+
+                    <div class="options">
+
+                        <button class="option-btn treino-btn" data-value="Academia">
+                            Academia
+                        </button>
+
+                        <button class="option-btn treino-btn" data-value="Corrida">
+                            Corrida
+                        </button>
+
+                        <button class="option-btn treino-btn" data-value="Treino em casa">
+                            Treino em casa
+                        </button>
+
+                        <button class="option-btn treino-btn" data-value="Nenhum">
+                            Nenhum
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- ESTUDOS -->
+
+                <div class="routine-group">
+
+                    <h3>Tempo de estudos por dia</h3>
+
+                    <div class="options">
+
+                        <button class="option-btn estudos-btn" data-value="1h">
+                            1h
+                        </button>
+
+                        <button class="option-btn estudos-btn" data-value="2h">
+                            2h
+                        </button>
+
+                        <button class="option-btn estudos-btn" data-value="4h+">
+                            4h+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- TEMPO LIVRE -->
+
+                <div class="routine-group">
+
+                    <h3>Quanto tempo livre você tem por dia?</h3>
+
+                    <div class="options">
+
+                        <button class="option-btn tempo-btn" data-value="30 min">
+                            30 min
+                        </button>
+
+                        <button class="option-btn tempo-btn" data-value="1h">
+                            1h
+                        </button>
+
+                        <button class="option-btn tempo-btn" data-value="2h">
+                            2h
+                        </button>
+
+                        <button class="option-btn tempo-btn" data-value="4h+">
+                            4h+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- SONO -->
+
+                <div class="routine-group">
+
+                    <h3>Horas de sono</h3>
+
+                    <div class="options">
+
+                        <button class="option-btn sono-btn" data-value="5h">
+                            5h
+                        </button>
+
+                        <button class="option-btn sono-btn" data-value="7h">
+                            7h
+                        </button>
+
+                        <button class="option-btn sono-btn" data-value="8h+">
+                            8h+
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -92,11 +235,23 @@
 
                 <div class="inputs">
 
-                    <input type="number" id="idade" placeholder="Idade">
+                    <input
+                        type="number"
+                        id="idade"
+                        placeholder="Idade"
+                    >
 
-                    <input type="number" id="peso" placeholder="Peso (kg)">
+                    <input
+                        type="number"
+                        id="peso"
+                        placeholder="Peso (kg)"
+                    >
 
-                    <input type="number" id="altura" placeholder="Altura (cm)">
+                    <input
+                        type="number"
+                        id="altura"
+                        placeholder="Altura (cm)"
+                    >
 
                 </div>
 
@@ -114,3 +269,4 @@
 
 </body>
 </html>
+
